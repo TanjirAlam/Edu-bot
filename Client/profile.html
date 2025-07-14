@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - Edu-Bot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen font-sans">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-4 shadow-md flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Edu-Bot</h1>
+    <nav>
+      <a href="index.html" class="text-white hover:underline mr-4">Home</a>
+      <a href="front.html" class="text-white hover:underline">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Editable Profile Section -->
+  <section class="max-w-4xl mx-auto mt-10 bg-white p-8 rounded-2xl shadow-lg">
+    <div class="flex items-center gap-6 mb-8">
+      <img src="user-avatar.png" alt="User Avatar" class="w-24 h-24 rounded-full border-4 border-indigo-500">
+      <div>
+        <h2 id="displayName" class="text-2xl font-bold text-indigo-700">Tanjir Alam</h2>
+        <p class="text-gray-600 mt-1">Student | Class <span id="displayClass">12</span></p>
+        <p class="text-sm text-gray-400 mt-1">Member since <span id="displayDate">Jan 2024</span></p>
+      </div>
+    </div>
+
+    <!-- Editable Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-indigo-50 p-4 rounded-xl shadow text-center">
+        <label class="text-indigo-700 font-semibold">Tasks Completed</label>
+        <input type="number" value="42" class="text-2xl text-indigo-900 font-bold w-full text-center bg-transparent focus:outline-none">
+      </div>
+      <div class="bg-indigo-50 p-4 rounded-xl shadow text-center">
+        <label class="text-indigo-700 font-semibold">Doubts Cleared</label>
+        <input type="number" value="18" class="text-2xl text-indigo-900 font-bold w-full text-center bg-transparent focus:outline-none">
+      </div>
+      <div class="bg-indigo-50 p-4 rounded-xl shadow text-center">
+        <label class="text-indigo-700 font-semibold">Weekly Tests</label>
+        <input type="number" value="7" class="text-2xl text-indigo-900 font-bold w-full text-center bg-transparent focus:outline-none">
+      </div>
+    </div>
+
+    <!-- Editable Info Form -->
+    <h3 class="text-xl font-semibold text-indigo-700 mb-4">Edit Profile Information</h3>
+    <form id="profileForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label class="block mb-1 text-gray-600">Full Name</label>
+        <input type="text" id="nameInput" value="Tanjir Alam" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-600">Email</label>
+        <input type="email" id="emailInput" value="tanjir@example.com" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-600">Class</label>
+        <input type="text" id="classInput" value="12" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-600">Joined Date</label>
+        <input type="text" id="dateInput" value="Jan 2024" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      </div>
+    </form>
+
+    <button onclick="updateProfile()" class="mt-6 bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700">Save Changes</button>
+  </section>
+
+  <!-- Eddy Mascot -->
+  <div class="max-w-4xl mx-auto mt-10 flex items-center justify-center gap-4">
+    <img src="Eddy-Robot.png" alt="Eddy the Bot" class="w-20 h-20" />
+    <p class="text-indigo-700 text-lg font-semibold">Eddy says: "Your updates are saved! ✅"</p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function updateProfile() {
+      const name = document.getElementById('nameInput').value;
+      const classVal = document.getElementById('classInput').value;
+      const date = document.getElementById('dateInput').value;
+
+      document.getElementById('displayName').textContent = name;
+      document.getElementById('displayClass').textContent = classVal;
+      document.getElementById('displayDate').textContent = date;
+    }
+
+    // received update profile information
+    window.onload = function () {
+  const name = localStorage.getItem("userName") || "Student Name";
+  const email = localStorage.getItem("userEmail") || "your@email.com";
+  const joinDate = localStorage.getItem("joinDate") || "Jan 2024";
+
+  document.getElementById("displayName").textContent = name;
+  document.getElementById("displayClass").textContent = "10"; // Default class or fetch from DB
+  document.getElementById("displayDate").textContent = joinDate;
+
+  // Pre-fill form
+  document.getElementById("nameInput").value = name;
+  document.getElementById("emailInput").value = email;
+  document.getElementById("dateInput").value = joinDate;
+}
+
+  </script>
+
+</body>
+</html>

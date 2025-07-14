@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign up Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        p{
+            font-size: 18px;
+            color: rgb(2, 2, 7);
+        }
+        .animated-paragraph {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    </style>
+</head>
+<body>
+      <!-- Header -->
+      <header class="navbar">
+        <div class="avatar"></div>
+        <div class="nav-buttons">
+          <!-- Login Part -->
+          <button class="btn login" onclick="openPopup()" >Login</button>
+          <!--For login popup button -->
+          <div class="popup" id="popup">
+            <div class="popup-content">
+              <h2>Login</h2>
+              <form onsubmit="submitLogin(event)">
+                <input type="email" id="email" placeholder="Email" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <button type="submit">Login</button>
+              </form>
+              <button class="close-btn" onclick="closePopup()">Cancel</button>
+            </div>
+          </div>
+      <!-- Sign up part-->
+      <button class="btn signup" onclick="openSignup()"<a herf="./tab-menu">Sign Up</button>
+      <!--Sign up popup-->
+      <div class="popup" id="signupPopup">
+        <div class="popup-content">
+          <h2>Create Account</h2>
+          <form onsubmit="submitSignup(event)">
+            <input type="text" id="name" placeholder="Full Name" required />
+            <input type="email" id="signupEmail" placeholder="Email" required />
+            <input type="password" id="signupPassword" placeholder="Password" required />
+            <button type="submit">Sign Up</button>
+          </form>
+          <button class="close-btn" onclick="closeSignup()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro Bot Section -->
+  <section class="intro-section animate">
+    <img src="Graident Ai Robot.jpg" alt="Bot Eddy" class="bot" />
+    <h1 class="bot-text"><B>Hi, myself Eddy</B></h1>
+    <p  clss="animated-paragraph"style="color: rgb(14, 14, 27);"">EduBot: AI-Based Assistant Teacher</p>
+
+    <p clss="animated-paragraph" style="color: rgb(14, 14, 27);">  EduBot is an innovative AI-powered assistant teacher designed to support students in their academic journey by providing instant, intelligent guidance. At the heart of EduBot is Eddy, your personal assistant teacher—friendly, smart, and always ready to help. Whether you're stuck on a tough math problem, need a quick explanation of a science concept, or want to revise before an exam, Eddy is there for you 24/7.
+    </p>
+    <p clss="animated-paragraph" style="color: rgb(14, 14, 27);">        
+        EduBot leverages advanced AI technologies to simulate the role of a real educator. Eddy can answer questions, generate study notes, quiz you on topics, and explain subjects in simple terms—making learning more accessible and engaging. With a conversational interface and personalized support, EduBot adapts to your learning pace and style, helping you stay ahead in your studies.</p>
+    <p clss="animated-paragraph" > Say goodbye to learning struggles—with Eddy by your side, learning becomes smarter, faster, and more fun!</p>
+  </section>
+  <script src="app.js"></script>
+  <script src="about.js"></script>
+</body>
+</html>

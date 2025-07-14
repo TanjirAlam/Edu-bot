@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edu-Bot UI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <!-- <header class="navbar">
+    <div class="avatar"></div>
+    <div class="nav-buttons"> -->
+      <!-- Login Part -->
+      <!-- <button class="btn login" onclick="openPopup()">Login</button> -->
+      <!--For login popup button -->
+      <!-- <div class="popup" id="popup">
+        <div class="popup-content">
+          <h2>Login</h2>
+          <form onsubmit="submitLogin(event)">
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+          </form>
+          <button class="close-btn" onclick="closePopup()">Cancel</button>
+        </div>
+      </div> -->
+      <!-- Sign up part-->
+      <!-- <button class="btn signup" onclick="openSignup()"<a herf="./tab-menu">Sign Up</button> -->
+      <!--Sign up popup-->
+      <!-- <div class="popup" id="signupPopup">
+        <div class="popup-content">
+          <h2>Create Account</h2>
+          <form onsubmit="submitSignup(event)">
+            <input type="text" id="name" placeholder="Full Name" required />
+            <input type="email" id="signupEmail" placeholder="Email" required />
+            <input type="password" id="signupPassword" placeholder="Password" required />
+            <button type="submit">Sign Up</button>
+          </form>
+          <button class="close-btn" onclick="closeSignup()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </header> -->
+
+  <!-- Intro Bot Section -->
+  <!-- <section class="intro-section animate">
+    <img src="Graident Ai Robot.jpg" alt="Bot Eddy" class="bot" />
+    <p class="bot-text"><B>Hi, myself Eddy</B></p>
+    <p style="color: rgb(14, 14, 27);"">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae hic repellat sed quod qui ullam similique, dicta aliquid provident cum quia quibusdam iure accusantium, laudantium delectus reprehenderit tenetur. Inventore, tempore.</p>
+    <p style="color: rgb(8, 8, 25);">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius quisquam officia vitae tenetur dolor ipsa deserunt quaerat natus. Similique quas praesentium maiores maxime incidunt nostrum eos odio iure totam dignissimos?
+    Aspernatur laboriosam vero, velit sequi nam nostrum deleniti magni nihil deserunt rerum dignissimos ducimus aut alias, asperiores est nisi, eum architecto? Quis odio ab blanditiis vel iure laudantium consequatur sed.
+    Aperiam, sapiente itaque. Vero architecto assumenda porro modi facere, corporis quod inventore, facilis dolorem, dolorum pariatur animi voluptatem suscipit! At, beatae et vitae voluptates officia quas veritatis quos iusto ratione.
+    Perspiciatis accusantium provident sit dolore laborum dolor odio incidunt modi ab exercitationem alias, quasi quaerat, sapiente enim, blanditiis magni? Explicabo distinctio aliquam fugiat, ipsum commodi sed autem quo veniam doloremque?
+    Repellat ipsum similique iste nemo ipsam omnis nihil, doloremque voluptas accusamus, officia saepe ullam deserunt nam ad est ipsa esse magnam possimus quo voluptatum aut aperiam! Labore quod necessitatibus architecto.</p>
+    <p style="color: rgb(8, 8, 25);"">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim debitis ducimus iure provident, facilis iste libero dolore sed omnis dolores amet tempore a illo necessitatibus asperiores recusandae ullam unde dolorem.
+    Magnam adipisci veritatis velit aliquam at dignissimos magni quae nesciunt dolorem, suscipit qui a vel est laborum iusto recusandae. Iusto, esse sed deleniti sapiente corporis suscipit voluptatibus quidem asperiores nam?</p>
+  </section> -->
+
+  <!-- Navigation Tabs -->
+  <nav class="tab-menu">
+    <span class="tab-icon"></span>
+    <ul>
+      <li><a class="click" href="#todo">To-do</a></li>
+    <li><a class="click" href="#homework">Homework</a></li>
+    <li><a class="click" href="#doubt">Doubt</a></li>
+    <li><a class="click" href="#pcq">PCQ</a></li>
+    <li><a class="click" href="#test">Test</a></li>
+    </ul>
+    <div class="user-profile" onclick="toggleDropdown(event)">
+    
+      <div class="user"><i class="fa-solid fa-user"></i></div>
+      <div class="profile-dropdown" id="profileDropdown">
+        <a href="profile.html">My Profile</a>
+        <a href="#">Dashboard</a>
+        <!-- <a href="#">Settings</a> -->
+        <a href="#">Logout</a>
+      </div>
+    </div>    
+  </nav>
+
+  <!-- Welcome Section -->
+  <section class="welcome-section animate">
+    <img src="Graident Ai Robot.jpg" alt="Bot Eddy" class="bot" />
+    <p class="welcome-msg"><B>I'm here to help you !</B></p>
+    <p class="welcome-msg"><B>Welcome to Edu-Bot ✌</B></p>
+    <p class="welcome-msg"><B>"Discover the joy of Learning"</B></p>
+  </section>
+
+  <!-- To-Do Tasks Section -->
+
+  <section id="todo" class="task-section fade-in">
+      <!-- To-Do List Header -->
+    <header class="header2">
+      <div class="profile-pic"></div>
+      <div class="header-center">To-Do List</div>
+      <div class="menu-icon">☰</div>
+    </header>
+  </section>
+ 
+  <!-- To-Do Tasks Section -->
+  <section class="task-section fade-in">
+    <h3>Today's Tasks</h3>
+    <div class="task-card">
+      <div class="task-input-container">
+        <input type="text" id="task-input" placeholder="Add a new task..." />
+        <button id="add-task-btn">Add Task</button>
+      </div>
+      
+      <ol id="todo-list">
+        <!-- Dynamically added tasks will appear here -->
+      </ol>
+      
+    </div>
+    <div class="bot-help">
+      <img src="Graident Ai Robot.jpg" alt="Bot" class="bot" />
+      <p>Need help?</p>
+    </div>
+  </section>
+  <!-- Homework Section -->
+  <section id="homework" class="homework-section fade-in">
+    <!-- Homework Header -->
+  <section class="homework-section fade-in">
+    <div class="head">
+      <div class="profile-pic"></div>
+      <div class="header-center">Homework</div>
+      <div class="menu-icon">☰</div>
+    </div> 
+  </section>
+  
+    <div class="homework-label">Here is your today's homework</div>
+
+    <div class="homework-card">
+      <ul>
+        <li>Q. --------------------------------</li>
+        <li>Q. --------------------------------</li>
+        <li>Q. --------------------------------</li>
+        <li>Q. --------------------------------</li>
+        <li>Q. --------------------------------</li>
+        <li>Q. --------------------------------</li>
+        <li>Q. --------------------------------</li>
+      </ul>
+    </div>
+
+    <div class="bot-help">
+      <img src="Graident Ai Robot.jpg" alt="Bot" class="bot" />
+      <p>Need help?</p>
+    </div>
+
+    <div class="action-bar">
+      <button class="icon-btn">📷</button>
+      <button class="upload-btn">Upload Homework</button>
+      <button class="icon-btn">📄</button>
+    </div>
+  </section>
+  
+<!-- Doubt Section -->
+<section id="doubt" class="doubt-section">
+  <!--HEADER 3-->
+  <header class="header3">
+    <div class="profile-logo"></div>
+    <div class="header-center">Doubt Solver</div>
+    <!-- <div class="header-icon">❓</div> -->
+    <div class="menu-icon">☰</div>
+  </header>
+</section>
+  
+  <!-- Doubt Input -->
+  <section class="doubt-section">
+    <div class="doubt-input">
+      <span class="mic-icon" onclick="startVoiceToText('doubtInput')">
+        <i class="fa-solid fa-microphone" style="color: #000;"></i>
+      </span>
+      <input type="text" id="doubtInput" placeholder="Ask any doubt ?" />
+      <span class="search-icon" onclick="submitDoubt()">
+        <i class="fa-solid fa-magnifying-glass" style="color: #000;"></i>
+      </span>
+    </div>
+  
+    <div class="arrow">⬇</div>
+    <div class="solution-board-label">Solution board</div>
+  
+    <div class="solution-box" id="solutionBox">
+      <!-- Solution will be shown here -->
+    </div>
+  
+    <div class="bot-help">
+      <img src="Graident Ai Robot.jpg" alt="Bot" class="bot"/>
+      <p>Need help?</p>
+    </div>
+  </section>
+  <!-- Practice Section -->
+  <section id="pcq" class="practice-section">
+    <div class="practice-header">
+      <div class="title">Practice Question</div>
+      <div class="info-icon">❓</div>
+      <div class="menu-icon">☰</div>
+    </div>
+
+    <div class="practice-input">
+      <span class="mic-icon" onclick="startVoiceToText('practiceSearchInput')">
+        <i class="fa-solid fa-microphone" style="color: #000;"></i>
+      </span>
+      <input type="text" id="practiceSearchInput" placeholder="Search any topic" />
+      <!-- <span class="search-icon" id="searchIcon">
+        <i class="fa-solid fa-magnifying-glass" style="color: #000;"></i>
+      </span>       -->
+      <span class="search-icon" id="searchIcon" onclick="submitTopic()">
+        <i class="fa-solid fa-magnifying-glass" style="color: #000;"></i>
+      </span>
+      
+    </div>
+    
+
+    <div class="arrow">⬇</div>
+
+    <div class="practice-box" id="practice-box">
+      <ul id="practiceQuestionsList">
+        <!-- Questions will be inserted here -->
+      </ul>      
+    </div>
+
+    <div class="bot-help">
+      <img src="Graident Ai Robot.jpg" alt="Bot" class="bot"/>
+      <p>Need help?</p>
+    </div>
+  </section>
+
+  <!-- Weekly Test Section -->
+<section id="test" class="info-row">
+  
+  <div class="header4">
+    <div class="profile-logo"></div>
+     <div class="header-center">
+       <span class="icon">📋</span> Weekly Test</div>
+     <div class="menu-icon">☰</div>
+  </div>
+</section>
+  <!-- Test Topic Info -->
+  <section class="info-row">
+    <div class="badge">10 Points</div>
+    <div class="badge">Mandatory</div>
+    <!-- <div class="badge">5 Attempts left</div> -->
+    <button class="badge">5 Attempts left</button>
+    <button id="startTestBtn" class="start-btn">Start Test</button>
+  </section>
+
+  <!-- Bot Help -->[]
+  <div class="bot-help">
+    <img src="Graident Ai Robot.jpg" alt="Bot" class="bot"/>
+    <p>Need help?</p>
+  </div>
+
+  <!-- Test Section -->
+  <section id="weeklyExamSection" style="display: none;">
+    <div class="test-header">
+      <span class="icon">📋</span> Weekly Test
+    </div>
+    <div class="test-input">
+      <span class="mic-icon" onclick="startVoiceToText('testInput')">
+        <i class="fa-solid fa-microphone" style="color: #000;"></i>
+      </span>
+      <input type="text" id="testInput" placeholder="Enter topic for test ?" />
+      <span class="search-icon" onclick="submitTest()">
+        <i class="fa-solid fa-magnifying-glass" style="color: #000;"></i>
+      </span>
+    </div>
+    <div class="test-options">
+      <button class="option-btn">Attempt</button>
+      <button class="option-btn gray">Not Attempt</button>
+      <button class="option-btn gray" id="leaveBtn">Leave</button>
+      <button class="submit-btn">Submit Test</button>
+    </div>
+  
+    <p id="examMessage" style="display: none; color: green; font-weight: bold;"></p>
+    <p id="timer" style="font-weight: bold; color: red; display: none;">Time Left: 30:00</p>
+  
+    <div class="question-box animate">
+      <!-- <p>Q. -----------------------------------------</p>
+      <p>→ a)____ b)____ c)____ d)____</p>
+      <p>Q. -----------------------------------------</p>
+      <p>→ a)____ b)____ c)____ d)____</p>
+      <p>Q. -----------------------------------------</p>
+      <p>→ a)____ b)____ c)____ d)____</p> -->
+    </div>
+  
+    <!-- Leave Confirmation Popup Inside Section -->
+    <div id="leavePopup" class="popup-overlay" style="display: none;">
+      <div class="popup-box">
+        <p>Are you sure you want to leave the test?</p>
+        <div class="popup-buttons">
+          <button id="confirmLeave">Yes</button>
+          <button id="cancelLeave">No</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Bot Help -->
+  <div class="bot-help">
+    <img src="Graident Ai Robot.jpg" alt="Bot" class="bot"/>
+    <p>Need help?</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <span><i class="fa-solid fa-share-nodes"></i></span>
+      <span class="icon"><i class="fa-brands fa-linkedin"></i></span>
+      <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+      <span>edubot004@gmail.com</span>
+    </div>
+    <div class="footer-right">
+     <!-- <button class="feedback-btn"><a href="./Feedback.html" class="click">Feedback 💬</a></button> -->
+    </div>
+    <!-- <button class="feedback-btn"><a href="./Feedback.html" class="click">Feedback 💬</a></button> -->
+  </footer>
+  <script src="app.js"></script>
+  <!-- <script src="main.js"></script> -->
+  <script src="voice.js"></script>
+  <script src="doubt.js"></script>
+  <script src="auth.js"></script>
+  <script src="api.js"></script>
+  <script src="Fetch.js"></script>
+  <script src="PqApi.js"></script>
+  <!-- <script src="practiceQuestion.js"></script>
+  <script src="serverP.js"></script> -->
+  <button class="feedback-btn"><a href="./Feedback.html" class="click">Feedback 💬</a></button>
+</body>
+</html>
